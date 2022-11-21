@@ -12,10 +12,10 @@ const handleRegister = (event) => {
   console.log(email, password);
 }
 
-const handleEmailChange = event => {
+const handleEmailBlur = event => {
   console.log(event.target.value)
 }
-const handlePasswordChange = event =>{
+const handlePasswordBlur = event =>{
   const pass= event.target.value
   const passLength = pass.length
   console.log(pass,passLength)
@@ -25,9 +25,9 @@ function App() {
   return (
     <div className="App">
       <form onSubmit={handleRegister}>
-        <input onChange={handleEmailChange} type="email" name="email" id="" placeholder='Your Email' />
+        <input onBlur={handleEmailBlur} type="email" name="email" id="" placeholder='Your Email' />
         <br />
-        <input onChange={handlePasswordChange} type="password" name="password" id="" placeholder='Your Password' />
+        <input onBlur={handlePasswordBlur} type="password" name="password" id="" placeholder='Your Password' />
         <br />
         <button type="submit">Register</button>
       </form>
